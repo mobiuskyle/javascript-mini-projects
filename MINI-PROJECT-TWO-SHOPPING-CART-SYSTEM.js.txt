@@ -1,0 +1,74 @@
+//Mini Project 2: Shopping Cart System
+//Goal: Create a simple shopping cart that tracks items and calculates totals
+
+
+let shoppingItems = [['biscuits' , 78 , 2] , 
+                     ['cheetos' , 65 , 6],
+                     ['Bread' , 60 , 1],
+                     ['pens' , 14 , 10] , 
+                     ['ice cream tubs' , 400 , 3] , 
+                     ['drawing book' , 90 , 2] , 
+                     [ 'exercise book' ,  45 ,  5]] ;
+
+let noOfShoppingItems = shoppingItems.length;
+console.log(' \n  ===SHOPPING CART===  \n ');
+console.log(shoppingItems);
+console.log('you bought ' , noOfShoppingItems , 'items');
+
+//calculating total cost
+
+let total = 0 ;
+
+// looping through each item to find subtotal of each item then find total of everything in the shopping list
+for(let i = 0 ; i<shoppingItems.length; i++)
+{
+let item = shoppingItems[i];
+let name = item[0];
+let price = item[1];
+let quantity = item[2];
+let subtotal = price*quantity;
+
+  console.log((i + 1) + ':' + name);
+  console.log('The item price is KSH : ', price);
+  console.log('The item quantity is ' , quantity);
+  console.log('The total amount of each item is KSH :' , subtotal) 
+
+total+=subtotal
+console.log('The total amount of everything in the shopping list is ' ,total );
+}
+
+//applying a ten percent discount for items over 2000 kenyan shillings
+
+let discount = 0.1 * total ;
+console.log('Your discount is KSH :' ,discount);
+let discountedTotal = total - discount ;
+
+console.log('The total after discount is KSH :' , discountedTotal ) ; 
+
+//checking if one qualifies for a discount 
+
+if(total>2000)
+  {
+    console.log('You qualify for a 10 percent discount\n.Thx for shopping with us  ') ;
+  }
+else
+  {
+    console.log('You do not qualify for a discount\n.Thx for shopping with us'  ) ;
+  }
+//Find the most expensive item in the cart
+
+let expensiveItem = shoppingItems[0];
+let highestPrice =shoppingItems[0][1];
+
+for(let i = 0 ; i<shoppingItems.length ; i++)
+{
+  if(shoppingItems[i][1]>highestPrice)
+    {
+      highestPrice=shoppingItems[i][1] ;
+      expensiveItem = shoppingItems[i] ;
+    }
+
+    {
+      console.log('The most expensive item is  ' , expensiveItem[0] , 'the highest price is ' , highestPrice);
+    }
+}
