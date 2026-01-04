@@ -17,12 +17,7 @@
 
 //Log the average, letter grade, and whether the student passed (passing is C or above)
 
-//Bonus Challenge:
 
-//Ask the user to input scores (if you know how to use prompt() in browser)
-//Find the highest and lowest scores
-//Remove the lowest score before calculating the average
-//if i let the user prompt
 
  const gradeScores = [85 , 67 , 90 , 56 ,45 ,34 ,78 ,90 ,65 ] ;
  let total = 0 ;
